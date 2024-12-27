@@ -5,6 +5,7 @@ KERNEL_OFFSET_HIGH  equ 0xFFFFFFFF80000000
 KERNEL_LOAD_SEGMENT equ 0x1000
 KERNEL_LOAD_OFFSET  equ 0x0000
 KERNEL_OFFSET_LOW   equ (KERNEL_LOAD_SEGMENT << 4) + KERNEL_LOAD_OFFSET
+VGA_MEMORY         equ 0xB8000
 
 start:
     xor ax, ax
@@ -35,9 +36,11 @@ load_kernel:
     ret
 
 enable_A20:
+    push ax
     in al, 0x92
     or al, 2
     out 0x92, al
+    pop ax
     ret
 
 enable_protected_mode:
@@ -142,7 +145,7 @@ print_16bit:
 print_protected_mode:
     push eax
     push ebx
-    mov ebx, 0xB8000                ; VGA mem address
+    mov ebx, VGA_MEMORY
 .loop:
     lodsb
     or al, al
@@ -160,7 +163,7 @@ print_protected_mode:
 print_long_mode:
     push rax
     push rbx
-    mov rbx, 0xB8000                ; VGA mem address
+    mov rbx, VGA_MEMORY
 .loop:
     lodsb
     or al, al

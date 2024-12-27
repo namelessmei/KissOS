@@ -1,5 +1,5 @@
-#ifndef __BBOS__STRING__LIBK__
-#define __BBOS__STRING__LIBK__
+#ifndef __KISSOS__STDSTRING__LIBK__
+#define __KISSOS__STDSTRING__LIBK__
 
 #include "stddef.h"
 

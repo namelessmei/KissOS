@@ -1,5 +1,5 @@
-#ifndef __BBOS__STDDEF__LIBK__
-#define __BBOS__STDDEF__LIBK__
+#ifndef __KISSOS__STDDEF__LIBK__
+#define __KISSOS__STDDEF__LIBK__
 
 #define NULL ((void *)0)
 #define true 0x1
