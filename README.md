@@ -8,8 +8,12 @@ designed for macOS environments.
 
 ## Components
 
-- [ ] Bootloader
-- [ ] Kernel Entry Point
+- [X] Bootloader
+- [X] Kernel Entry Point
+- [X] PIC
+- [X] String Library
+- [X] VGA Library
+- [X] Memory Library
 
 ## Requirement
 
